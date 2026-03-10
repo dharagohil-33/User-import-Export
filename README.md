@@ -1,36 +1,179 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# User Import/Export Admin Dashboard
 
-## Getting Started
+A simple **Admin Dashboard** built with **Next.js + Supabase** that allows an administrator to manage users with features like **Excel Import, Excel Export, Search, and Pagination**.
 
-First, run the development server:
+This project demonstrates how to build a **full-stack admin panel** using Supabase for authentication and database management.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Features
+
+### Authentication
+
+* Admin login using Supabase Auth
+* Only one admin account allowed
+* Protected dashboard route
+* Logout functionality
+
+### User Management
+
+* View users in a table
+* Pagination for large datasets
+* Search users
+* Filter user records
+
+### Excel Import
+
+* Upload `.xlsx` file
+* Parse Excel file
+* Insert users into database
+
+### Excel Export
+
+* Download users as an Excel file
+* Useful for backups or reports
+
+---
+
+## 🧰 Tech Stack
+
+Frontend
+
+* Next.js (App Router)
+* React
+* TailwindCSS
+
+Backend
+
+* Supabase
+
+Libraries
+
+* SheetJS (`xlsx`) for Excel import/export
+
+---
+
+## 📂 Project Structure
+
+```
+app
+ ├ adminlogin
+ │   └ page.tsx
+ │
+ ├ dashboard
+ │   └ page.tsx
+ │
+components
+ └ users
+     ├ ImportUsers.tsx
+     └ UsersTable.tsx
+
+services
+ ├ importService.ts
+ └ userService.ts
+
+lib
+ └ supabaseClient.ts
+
+middleware.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Explanation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**app/**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* Contains application routes
 
-## Learn More
+**components/**
 
-To learn more about Next.js, take a look at the following resources:
+* UI components (table, import UI)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**services/**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Business logic (database operations)
 
-## Deploy on Vercel
+**lib/**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Supabase client configuration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📊 Excel Import Format
+
+The Excel file must contain these columns:
+
+| name     | email                                   | phone      | role |
+| -------- | --------------------------------------- | ---------- | ---- |
+| John Doe | [john@email.com](mailto:john@email.com) | 9999999999 | user |
+
+---
+
+## 🖥 Installation
+
+Clone the project:
+
+```
+git clone <repo-url>
+```
+
+Install dependencies:
+
+```
+npm install
+```
+
+Install Excel library:
+
+```
+npm install xlsx
+```
+
+Run the development server:
+
+```
+npm run dev
+```
+
+---
+
+## 🔑 Admin Login
+
+Only the email defined in:
+
+```
+NEXT_PUBLIC_ADMIN_EMAIL
+```
+
+can access the dashboard.
+
+---
+
+
+## 📸 Dashboard Overview
+
+Main sections:
+
+```
+Admin Dashboard
+ ├ Import Users
+ ├ Export Users
+ ├ Search Users
+ └ Users Table
+```
+
+---
+
+## 🎯 Purpose
+
+This project demonstrates:
+
+* Full stack CRUD with Supabase
+* Authentication with Next.js
+* Excel file processing
+* Admin dashboard UI patterns
+* Clean separation of UI and logic
+
+
+---
+
+
