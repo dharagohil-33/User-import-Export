@@ -13,7 +13,6 @@ This project demonstrates how to build a **full-stack admin panel** using Supaba
 * Admin login using Supabase Auth
 * Only one admin account allowed
 * Protected dashboard route
-* Logout functionality
 
 ### User Management
 
@@ -135,19 +134,6 @@ npm run dev
 ```
 
 ---
-
-## 🔑 Admin Login
-
-Only the email defined in:
-
-```
-NEXT_PUBLIC_ADMIN_EMAIL
-```
-
-can access the dashboard.
-
----
-
 
 ## 📸 Dashboard Overview
 
